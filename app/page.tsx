@@ -1,187 +1,329 @@
-// Page d'accueil - TWEE RECRU
-import Link from 'next/link';
-import { Card, Button } from '@/components/UI';
-import ProtectedRoute from '@/components/ProtectedRoute';
-export default function HomePage() {
-  return (
+'use client';
+import React, { useState } from 'react';
+import { Check, X, Users, Brain, BookOpen, FileText, BarChart3, Shield, Zap, Globe, Award, TrendingUp } from 'lucide-react';
 
-    <div className="min-h-screen">
-      {/* Section Hero */}
-      <section className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in">
-              Bienvenue sur TWEE RECRU
+export default function CommercialHomePage() {
+  const [billingCycle, setBillingCycle] = useState('monthly');
+
+  const packs = [
+    {
+      name: 'Starter',
+      description: 'Pour les petites entreprises',
+      monthlyPrice: 49,
+      yearlyPrice: 470,
+      features: [
+        { text: 'Jusqu\'à 20 employés', included: true },
+        { text: 'Gestion des employés de base', included: true },
+        { text: '5 recrutements par mois', included: true },
+        { text: '3 offres de stage', included: true },
+        { text: 'Support par email', included: true },
+        { text: 'Analyse IA des CV', included: false },
+        { text: 'Formations illimitées', included: false },
+        { text: 'Dashboard avancé', included: false },
+        { text: 'API personnalisée', included: false }
+      ],
+      recommended: false
+    },
+    {
+      name: 'Professional',
+      description: 'Pour les entreprises en croissance',
+      monthlyPrice: 149,
+      yearlyPrice: 1430,
+      features: [
+        { text: 'Jusqu\'à 100 employés', included: true },
+        { text: 'Gestion complète des employés', included: true },
+        { text: 'Recrutements illimités', included: true },
+        { text: 'Gestion de stages illimitée', included: true },
+        { text: 'Support prioritaire', included: true },
+        { text: 'Analyse IA des CV', included: true },
+        { text: '10 formations par mois', included: true },
+        { text: 'Dashboard avancé', included: true },
+        { text: 'API personnalisée', included: false }
+      ],
+      recommended: true
+    },
+    {
+      name: 'Enterprise',
+      description: 'Pour les grandes organisations',
+      monthlyPrice: 399,
+      yearlyPrice: 3830,
+      features: [
+        { text: 'Employés illimités', included: true },
+        { text: 'Gestion multi-sites', included: true },
+        { text: 'Recrutements illimités', included: true },
+        { text: 'Gestion stages & PFE avancée', included: true },
+        { text: 'Support dédié 24/7', included: true },
+        { text: 'Analyse IA avancée', included: true },
+        { text: 'Formations illimitées', included: true },
+        { text: 'Dashboard personnalisé', included: true },
+        { text: 'API personnalisée', included: true }
+      ],
+      recommended: false
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black opacity-10"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center bg-blue-500 bg-opacity-30 rounded-full px-4 py-2 mb-6">
+              <Zap className="w-4 h-4 mr-2" />
+              <span className="text-sm font-medium">L'IA au service de vos RH</span>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              Révolutionnez votre gestion des ressources humaines
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
-              Votre plateforme RH intelligente pour optimiser la gestion de vos ressources humaines
+            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+              TWEE RECRU combine intelligence artificielle et expertise RH pour vous offrir une plateforme complète, intuitive et performante
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/recrutement">
-                <Button size="lg" className="bg-blue-200 border-white text-blue-600 hover:bg-blue-50">
-                  Commencer le recrutement
-                </Button>
-              </Link>
-              <Link href="/dashboard">
-                <Button size="lg" className="bg-blue-200 border-white text-blue-600 hover:bg-blue-50">
-                  Voir le dashboard
-                </Button>
-              </Link>
+              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl">
+                Essayer gratuitement
+              </button>
+              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+                Voir une démo
+              </button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section Fonctionnalités */}
-      <section className="py-16 bg-white">
+      {/* Context Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Fonctionnalités de la plateforme
+              Pourquoi TWEE RECRU ?
             </h2>
-            <p className="text-xl text-gray-600">
-              Tout ce dont vous avez besoin pour gérer efficacement vos ressources humaines
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Dans un monde professionnel en constante évolution, la gestion des ressources humaines nécessite des outils modernes et intelligents
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Gestion des employés */}
-            <FeatureCard
-              icon={
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              }
-              title="Gestion des Employés"
-              description="Gérez facilement les informations de vos employés, leurs compétences, soft skills et historique professionnel."
-              link="/employes"
-            />
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Gain de temps de 70%</h3>
+              <p className="text-gray-600">
+                Automatisez vos processus RH répétitifs et concentrez-vous sur ce qui compte vraiment : vos collaborateurs
+              </p>
+            </div>
 
-            {/* Recrutement IA */}
-            <FeatureCard
-              icon={
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              }
-              title="Recrutement Intelligent"
-              description="Analysez automatiquement les CV avec notre IA et organisez des interviews intelligentes pour trouver les meilleurs talents."
-              link="/recrutement"
-            />
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-green-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                <Brain className="w-7 h-7 text-green-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">IA de pointe</h3>
+              <p className="text-gray-600">
+                Notre intelligence artificielle analyse les CV, prédit les compétences et optimise vos recrutements avec une précision inégalée
+              </p>
+            </div>
 
-            {/* Formations */}
-            <FeatureCard
-              icon={
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              }
-              title="Formation Continue"
-              description="Proposez des formations à vos employés, suivez leur progression et délivrez des attestations automatiquement."
-              link="/formations"
-            />
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-purple-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                <Shield className="w-7 h-7 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Conformité RGPD</h3>
+              <p className="text-gray-600">
+                Vos données et celles de vos employés sont sécurisées et conformes aux réglementations européennes
+              </p>
+            </div>
+          </div>
 
-            {/* Documents */}
-            <FeatureCard
-              icon={
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              }
-              title="Gestion Documentaire"
-              description="Centralisez tous vos documents RH et gérez les signatures électroniques en toute simplicité."
-              link="/documents"
-            />
-
-            {/* Dashboard */}
-            <FeatureCard
-              icon={
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
-              }
-              title="Tableau de Bord"
-              description="Visualisez vos KPI RH en temps réel avec des graphiques et statistiques détaillées."
-              link="/dashboard"
-            />
-
-            {/* Multi-rôles */}
-            <FeatureCard
-              icon={
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              }
-              title="Gestion Multi-Rôles"
-              description="Système d'authentification sécurisé avec différents niveaux d'accès (Admin, RH, Manager, Employé)."
-              link="/connexion"
-            />
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-3xl font-bold mb-4">La confiance de +500 entreprises</h3>
+                <p className="text-blue-100 mb-6">
+                  Des startups aux grandes entreprises, ils ont choisi TWEE RECRU pour transformer leur gestion RH
+                </p>
+                <div className="flex gap-8">
+                  <div>
+                    <div className="text-4xl font-bold">98%</div>
+                    <div className="text-blue-200">Satisfaction client</div>
+                  </div>
+                  <div>
+                    <div className="text-4xl font-bold">2M+</div>
+                    <div className="text-blue-200">CV analysés</div>
+                  </div>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white bg-opacity-10 rounded-lg p-4 backdrop-blur">
+                  <Award className="w-8 h-8 mb-2" />
+                  <div className="font-semibold text-blue-900">Prix Innovation RH 2024</div>
+                </div>
+                <div className="bg-white bg-opacity-10 rounded-lg p-4 backdrop-blur">
+                  <Globe className="w-8 h-8 mb-2" />
+                  <div className="font-semibold text-blue-900">Disponible dans 12 pays</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section Statistiques */}
-      <section className="py-16 bg-gradient-to-r from-blue-50 to-blue-100">
+      {/* Features Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <StatBox number="5" label="Employés actifs" />
-            <StatBox number="4" label="Recrutements en cours" />
-            <StatBox number="5" label="Formations disponibles" />
-            <StatBox number="3.2%" label="Taux d'absentéisme" />
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Une plateforme complète pour tous vos besoins RH
+            </h2>
+            <p className="text-xl text-gray-600">
+              Tout ce dont vous avez besoin, centralisé en un seul endroit
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { icon: Users, title: 'Gestion des employés', desc: 'Base de données complète avec compétences, soft skills et historique' },
+              { icon: Brain, title: 'Recrutement IA', desc: 'Analyse automatique des CV et matching intelligent avec vos offres' },
+              { icon: Users, title: 'Stages intelligents', desc: 'Recrutement IA de stagiaires et PFE avec matching automatique des compétences' },
+              { icon: BookOpen, title: 'Formation continue', desc: 'Catalogues de formations, suivi de progression et certifications' },
+              { icon: FileText, title: 'Gestion documentaire', desc: 'Stockage sécurisé et signatures électroniques' },
+              { icon: BarChart3, title: 'Analytics avancés', desc: 'KPI en temps réel et rapports personnalisables' },
+              
+            ].map((feature, idx) => (
+              <div key={idx} className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
+                <feature.icon className="w-10 h-10 text-blue-600 mb-4" />
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-gray-600">{feature.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Section CTA */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Prêt à optimiser votre gestion RH ?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Rejoignez TWEE RECRU et transformez votre façon de gérer les ressources humaines
-          </p>
-          <Link href="/connexion">
-            <Button size="lg">
-              Commencer maintenant
-            </Button>
-          </Link>
+      {/* Pricing Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Choisissez le pack adapté à vos besoins
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Tarifs transparents, sans frais cachés. Changez de pack à tout moment
+            </p>
+            
+            <div className="inline-flex bg-white rounded-lg p-1 shadow-sm">
+              <button
+                onClick={() => setBillingCycle('monthly')}
+                className={`px-6 py-2 rounded-md font-medium transition-colors ${
+                  billingCycle === 'monthly'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Mensuel
+              </button>
+              <button
+                onClick={() => setBillingCycle('yearly')}
+                className={`px-6 py-2 rounded-md font-medium transition-colors ${
+                  billingCycle === 'yearly'
+                    ? 'bg-blue-600 text-white'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                Annuel
+                <span className="ml-2 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
+                  -20%
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {packs.map((pack, idx) => (
+              <div
+                key={idx}
+                className={`bg-white rounded-2xl shadow-lg overflow-hidden ${
+                  pack.recommended ? 'ring-2 ring-blue-600 transform scale-105' : ''
+                }`}
+              >
+                {pack.recommended && (
+                  <div className="bg-blue-600 text-white text-center py-2 text-sm font-semibold">
+                    ⭐ Plus populaire
+                  </div>
+                )}
+                <div className="p-8">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{pack.name}</h3>
+                  <p className="text-gray-600 mb-6">{pack.description}</p>
+                  
+                  <div className="mb-6">
+                    <span className="text-5xl font-bold text-gray-900">
+                      {billingCycle === 'monthly' ? pack.monthlyPrice : pack.yearlyPrice}€
+                    </span>
+                    <span className="text-gray-600">
+                      /{billingCycle === 'monthly' ? 'mois' : 'an'}
+                    </span>
+                  </div>
+
+                  <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${
+                    pack.recommended
+                      ? 'bg-blue-600 text-white hover:bg-blue-700'
+                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                  }`}>
+                    Commencer
+                  </button>
+
+                  <div className="mt-8 space-y-4">
+                    {pack.features.map((feature, fIdx) => (
+                      <div key={fIdx} className="flex items-start">
+                        {feature.included ? (
+                          <Check className="w-5 h-5 text-green-500 mr-3 flex-shrink-0 mt-0.5" />
+                        ) : (
+                          <X className="w-5 h-5 text-gray-300 mr-3 flex-shrink-0 mt-0.5" />
+                        )}
+                        <span className={feature.included ? 'text-gray-700' : 'text-gray-400'}>
+                          {feature.text}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <p className="text-gray-600 mb-4">
+              Besoin d'une solution sur mesure ? Notre équipe est là pour vous accompagner
+            </p>
+            <button className="text-blue-600 font-semibold hover:text-blue-700">
+              Contacter notre équipe commerciale →
+            </button>
+          </div>
         </div>
       </section>
-    </div>
 
-  );
-}
-
-// Composant pour les cartes de fonctionnalités
-function FeatureCard({
-  icon,
-  title,
-  description,
-  link
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  link: string;
-}) {
-  return (
-    <Link href={link}>
-      <Card className="p-6 h-full hover:scale-105 transition-transform cursor-pointer">
-        <div className="text-blue-600 mb-4">{icon}</div>
-        <h3 className="text-xl font-bold text-gray-900 mb-3">{title}</h3>
-        <p className="text-gray-600 leading-relaxed">{description}</p>
-      </Card>
-    </Link>
-  );
-}
-
-// Composant pour les statistiques
-function StatBox({ number, label }: { number: string; label: string }) {
-  return (
-    <div className="text-center">
-      <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2">{number}</div>
-      <div className="text-gray-700 font-medium">{label}</div>
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold mb-6">
+            Prêt à transformer votre gestion RH ?
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Rejoignez les centaines d'entreprises qui ont déjà fait confiance à TWEE RECRU
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all shadow-lg">
+              Essai gratuit 14 jours
+            </button>
+            <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+              Planifier une démo
+            </button>
+          </div>
+          <p className="mt-6 text-blue-200 text-sm">
+            Aucune carte bancaire requise • Annulation à tout moment • Support en français
+          </p>
+        </div>
+      </section>
     </div>
   );
 }

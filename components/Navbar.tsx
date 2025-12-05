@@ -37,6 +37,7 @@ export default function Navbar() {
                         <NavLink href="/" label="Accueil" />
                         <NavLink href="/employes" label="Employés" />
                         <NavLink href="/recrutement" label="Recrutement" />
+                        <NavLink href="/stages" label="Stages" />
                         <NavLink href="/formations" label="Formations" />
                         <NavLink href="/documents" label="Documents" />
                         <NavLink href="/dashboard" label="Dashboard" />
@@ -128,6 +129,7 @@ export default function Navbar() {
                         <MobileNavLink href="/" label="Accueil" onClick={() => setIsMenuOpen(false)} />
                         <MobileNavLink href="/employes" label="Employés" onClick={() => setIsMenuOpen(false)} />
                         <MobileNavLink href="/recrutement" label="Recrutement" onClick={() => setIsMenuOpen(false)} />
+                        <MobileNavLink href="/stages" label="Stages" onClick={() => setIsMenuOpen(false)} />
                         <MobileNavLink href="/formations" label="Formations" onClick={() => setIsMenuOpen(false)} />
                         <MobileNavLink href="/documents" label="Documents" onClick={() => setIsMenuOpen(false)} />
                         <MobileNavLink href="/dashboard" label="Dashboard" onClick={() => setIsMenuOpen(false)} />
