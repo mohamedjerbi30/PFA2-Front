@@ -74,7 +74,7 @@ function DashboardContent() {
                                 <div className="flex items-center gap-3 flex-1 ml-4">
                                     <div className="flex-1 bg-gray-200 rounded-full h-3">
                                         <div
-                                            className="bg-blue-600 h-3 rounded-full transition-all"
+                                            className="bg-[#1988A7] h-3 rounded-full transition-all"
                                             style={{ width: `${(item.effectif / 5) * 100}%` }}
                                         />
                                     </div>
@@ -118,8 +118,8 @@ function DashboardContent() {
                         {employes.slice(0, 3).map((employe) => (
                             <div key={employe.id} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                                 <div className="flex items-center">
-                                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                                        <span className="text-blue-600 font-semibold text-sm">
+                                    <div className="w-10 h-10 bg-[#1988A7]/10 rounded-full flex items-center justify-center mr-3">
+                                        <span className="text-[#1988A7] font-semibold text-sm">
                                             {employe.prenom[0]}{employe.nom[0]}
                                         </span>
                                     </div>
@@ -156,7 +156,7 @@ function DashboardContent() {
                                     </div>
                                 </div>
                                 <div className="text-right">
-                                    <div className="font-semibold text-blue-600">{candidat.scoreCv}</div>
+                                    <div className="font-semibold text-[#1988A7]">{candidat.scoreCv}</div>
                                     <div className="text-xs text-gray-500">Score CV</div>
                                 </div>
                             </div>

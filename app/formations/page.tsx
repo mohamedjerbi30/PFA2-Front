@@ -20,7 +20,7 @@ export default function FormationsPage() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                     <Card className="p-6">
                         <div className="text-sm text-gray-600 mb-1">Total Formations</div>
-                        <div className="text-3xl font-bold text-blue-600">{formations.length}</div>
+                        <div className="text-3xl font-bold text-[#1988A7]">{formations.length}</div>
                     </Card>
                     <Card className="p-6">
                         <div className="text-sm text-gray-600 mb-1">En cours</div>
@@ -77,19 +77,19 @@ export default function FormationsPage() {
                             {/* Informations */}
                             <div className="space-y-2 mb-4 text-sm">
                                 <div className="flex items-center text-gray-700">
-                                    <svg className="w-4 h-4 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 mr-2 text-[#1988A7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                                     </svg>
                                     <span>Formateur: {formation.formateur}</span>
                                 </div>
                                 <div className="flex items-center text-gray-700">
-                                    <svg className="w-4 h-4 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 mr-2 text-[#1988A7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
                                     <span>Durée: {formation.duree}</span>
                                 </div>
                                 <div className="flex items-center text-gray-700">
-                                    <svg className="w-4 h-4 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 mr-2 text-[#1988A7]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                     </svg>
                                     <span>
@@ -113,7 +113,7 @@ export default function FormationsPage() {
                             <div className="mb-4">
                                 <div className="w-full bg-gray-200 rounded-full h-2">
                                     <div
-                                        className="bg-blue-600 h-2 rounded-full transition-all"
+                                        className="bg-[#1988A7] h-2 rounded-full transition-all"
                                         style={{
                                             width: `${((formation.placesTotales - formation.placesDisponibles) / formation.placesTotales) * 100}%`
                                         }}
@@ -192,7 +192,7 @@ function FormationProgress({
             <div className="mb-3">
                 <div className="w-full bg-gray-200 rounded-full h-3">
                     <div
-                        className={`h-3 rounded-full transition-all ${progression === 100 ? 'bg-green-500' : 'bg-blue-600'
+                        className={`h-3 rounded-full transition-all ${progression === 100 ? 'bg-green-500' : 'bg-[#1988A7]'
                             }`}
                         style={{ width: `${progression}%` }}
                     />

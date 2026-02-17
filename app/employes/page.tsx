@@ -28,9 +28,9 @@ export default function EmployesPage() {
 
                 {/* Statistiques rapides */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                    <Card className="p-6">
+                    <Card className="p-6 hover:shadow-xl transition-all">
                         <div className="text-sm text-gray-600 mb-1">Total Employés</div>
-                        <div className="text-3xl font-bold text-blue-600">{employes.length}</div>
+                        <div className="text-3xl font-bold text-[#1988A7]">{employes.length}</div>
                     </Card>
                     <Card className="p-6">
                         <div className="text-sm text-gray-600 mb-1">Actifs</div>
@@ -75,8 +75,8 @@ export default function EmployesPage() {
                             <tr key={employe.id} className="hover:bg-gray-50">
                                 <td className="px-6 py-4">
                                     <div className="flex items-center">
-                                        <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
-                                            <span className="text-blue-600 font-semibold">
+                                        <div className="w-10 h-10 bg-[#1988A7]/10 rounded-full flex items-center justify-center mr-3">
+                                            <span className="text-[#1988A7] font-semibold">
                                                 {employe.prenom[0]}{employe.nom[0]}
                                             </span>
                                         </div>
@@ -196,7 +196,7 @@ export default function EmployesPage() {
                                 <h3 className="text-lg font-semibold text-gray-900 mb-3">Historique</h3>
                                 <div className="space-y-3">
                                     {selectedEmploye.historique.map((hist, index) => (
-                                        <div key={index} className="border-l-4 border-blue-500 pl-4 py-2">
+                                        <div key={index} className="border-l-4 border-[#1988A7] pl-4 py-2">
                                             <div className="flex items-center gap-2 mb-1">
                                                 <Badge variant={
                                                     hist.type === 'Embauche' ? 'success' :

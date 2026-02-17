@@ -9,7 +9,7 @@ export function Card({
     className?: string;
 }) {
     return (
-        <div className={`bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow ${className}`}>
+        <div className={`bg-white rounded-xl shadow-md hover:shadow-xl transition-all ${className}`}>
             {children}
         </div>
     );
@@ -28,7 +28,7 @@ export function Badge({
         success: 'bg-green-100 text-green-800',
         warning: 'bg-yellow-100 text-yellow-800',
         danger: 'bg-red-100 text-red-800',
-        info: 'bg-blue-100 text-blue-800'
+        info: 'bg-[#1988A7]/10 text-[#1988A7]'
     };
 
     return (
@@ -57,11 +57,11 @@ export function Button({
     disabled?: boolean;
 }) {
     const variants = {
-        primary: 'bg-blue-600 text-white hover:bg-blue-700',
-        secondary: 'bg-gray-600 text-white hover:bg-gray-700',
-        success: 'bg-green-600 text-white hover:bg-green-700',
-        danger: 'bg-red-600 text-white hover:bg-red-700',
-        outline: 'bg-white text-blue-600 border-2 border-blue-600 hover:bg-blue-50'
+        primary: 'bg-[#1988A7] text-white hover:bg-[#146d8a] shadow-md hover:shadow-lg',
+        secondary: 'bg-[#272727] text-white hover:bg-[#3a3a3a] shadow-md hover:shadow-lg',
+        success: 'bg-green-600 text-white hover:bg-green-700 shadow-md hover:shadow-lg',
+        danger: 'bg-[#B91633] text-white hover:bg-[#8f1128] shadow-md hover:shadow-lg',
+        outline: 'bg-white text-[#1988A7] border-2 border-[#1988A7] hover:bg-[#1988A7]/5'
     };
 
     const sizes = {
@@ -75,7 +75,7 @@ export function Button({
             type={type}
             onClick={onClick}
             disabled={disabled}
-            className={`rounded-lg font-semibold transition-colors ${variants[variant]} ${sizes[size]} ${disabled ? 'opacity-50 cursor-not-allowed' : ''} ${className}`}
+            className={`rounded-lg font-semibold transition-all ${variants[variant]} ${sizes[size]} ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105'} ${className}`}
         >
             {children}
         </button>
@@ -116,7 +116,7 @@ export function Input({
                 value={value}
                 onChange={onChange}
                 required={required}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1988A7] focus:border-transparent outline-none transition-all"
             />
         </div>
     );
@@ -149,7 +149,7 @@ export function Select({
                 value={value}
                 onChange={onChange}
                 required={required}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1988A7] focus:border-transparent outline-none transition-all bg-white"
             >
                 <option value="">Sélectionner...</option>
                 {options.map((option) => (
@@ -193,7 +193,7 @@ export function Textarea({
                 onChange={onChange}
                 rows={rows}
                 required={required}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-vertical"
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1988A7] focus:border-transparent outline-none transition-all resize-vertical"
             />
         </div>
     );
@@ -225,7 +225,7 @@ export function StatCard({
                         </p>
                     )}
                 </div>
-                <div className="text-blue-600 bg-blue-100 p-4 rounded-full">
+                <div className="text-[#1988A7] bg-[#1988A7]/10 p-4 rounded-full">
                     {icon}
                 </div>
             </div>

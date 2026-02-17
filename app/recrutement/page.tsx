@@ -23,7 +23,7 @@ export default function RecrutementPage() {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
                     <Card className="p-6">
                         <div className="text-sm text-gray-600 mb-1">Total Candidatures</div>
-                        <div className="text-3xl font-bold text-blue-600">{candidats.length}</div>
+                        <div className="text-3xl font-bold text-[#1988A7]">{candidats.length}</div>
                     </Card>
                     <Card className="p-6">
                         <div className="text-sm text-gray-600 mb-1">Présélectionnés</div>

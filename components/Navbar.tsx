@@ -19,16 +19,16 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="bg-gradient-to-r from-blue-600 to-blue-800 text-white shadow-lg">
+        <nav className="bg-gradient-to-r from-[#1988A7] via-[#1988A7] to-[#146d8a] text-white shadow-lg sticky top-0 z-50 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <div className="flex items-center">
-                        <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
-                            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-                                <span className="text-blue-600 font-bold text-xl">TR</span>
+                        <Link href="/" className="flex items-center space-x-2 hover:opacity-90 transition-all group">
+                            <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg transition-shadow">
+                                <span className="text-[#1988A7] font-bold text-xl">TR</span>
                             </div>
-                            <span className="text-xl font-bold hidden sm:block">TWEE RECRU</span>
+                            <span className="text-xl font-bold hidden sm:block tracking-tight">TWEE RECRU</span>
                         </Link>
                     </div>
 
@@ -50,10 +50,10 @@ export default function Navbar() {
                             <div className="relative ml-4">
                                 <button
                                     onClick={() => setShowUserMenu(!showUserMenu)}
-                                    className="flex items-center space-x-2 px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors"
+                                    className="flex items-center space-x-2 px-4 py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-all hover:shadow-md backdrop-blur-sm"
                                 >
-                                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center">
-                                        <span className="text-blue-600 font-semibold text-sm">
+                                    <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-sm">
+                                        <span className="text-[#1988A7] font-semibold text-sm">
                                             {user.name ? user.name.charAt(0).toUpperCase() : user.email.charAt(0).toUpperCase()}
                                         </span>
                                     </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
                                         </Link>
                                         <button
                                             onClick={handleLogout}
-                                            className="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"
+                                            className="w-full text-left px-4 py-2 text-[#B91633] hover:bg-gray-100 transition-colors font-medium"
                                         >
                                             Déconnexion
                                         </button>
@@ -84,7 +84,7 @@ export default function Navbar() {
                         ) : (
                             <Link
                                 href="/connexion"
-                                className="ml-4 px-4 py-2 bg-white text-blue-600 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                                className="ml-4 px-4 py-2 bg-white text-[#1988A7] rounded-lg font-semibold hover:bg-gray-50 hover:shadow-md transition-all"
                             >
                                 Connexion
                             </Link>
@@ -94,7 +94,7 @@ export default function Navbar() {
                     {/* Bouton Menu Mobile */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 rounded-lg hover:bg-blue-700 transition-colors"
+                        className="md:hidden p-2 rounded-lg hover:bg-[#146d8a] transition-all hover:shadow-md"
                     >
                         <svg
                             className="w-6 h-6"
@@ -124,7 +124,7 @@ export default function Navbar() {
 
             {/* Menu Mobile */}
             {isMenuOpen && (
-                <div className="md:hidden bg-blue-700 border-t border-blue-600">
+                <div className="md:hidden bg-[#146d8a] border-t border-[#1988A7]/30 shadow-lg">
                     <div className="px-2 pt-2 pb-3 space-y-1">
                         <MobileNavLink href="/" label="Accueil" onClick={() => setIsMenuOpen(false)} />
                         <MobileNavLink href="/employes" label="Employés" onClick={() => setIsMenuOpen(false)} />
@@ -150,7 +150,7 @@ export default function Navbar() {
                                         handleLogout();
                                         setIsMenuOpen(false);
                                     }}
-                                    className="w-full text-left px-3 py-2 rounded-lg text-red-200 hover:bg-blue-600 transition-colors font-medium"
+                                    className="w-full text-left px-3 py-2 rounded-lg text-red-200 hover:bg-[#1988A7] transition-all font-medium"
                                 >
                                     Déconnexion
                                 </button>
@@ -159,7 +159,7 @@ export default function Navbar() {
                             <Link
                                 href="/connexion"
                                 onClick={() => setIsMenuOpen(false)}
-                                className="block px-3 py-2 rounded-lg bg-white text-blue-600 font-semibold text-center hover:bg-blue-50 transition-colors"
+                                className="block px-3 py-2 rounded-lg bg-white text-[#1988A7] font-semibold text-center hover:bg-gray-50 transition-all shadow-md"
                             >
                                 Connexion
                             </Link>
@@ -176,7 +176,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
     return (
         <Link
             href={href}
-            className="px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+            className="px-4 py-2 rounded-lg hover:bg-[#146d8a] transition-all font-medium hover:shadow-md"
         >
             {label}
         </Link>
@@ -197,7 +197,7 @@ function MobileNavLink({
         <Link
             href={href}
             onClick={onClick}
-            className="block px-3 py-2 rounded-lg hover:bg-blue-600 transition-colors font-medium"
+            className="block px-3 py-2 rounded-lg hover:bg-[#1988A7] transition-all font-medium"
         >
             {label}
         </Link>

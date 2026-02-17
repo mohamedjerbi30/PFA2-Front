@@ -130,10 +130,10 @@ export default function ConnexionPage() {
     if (showForgotPassword) {
         return (
             <PublicRoute>
-                <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 py-12 px-4 sm:px-6 lg:px-8">
+                <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1988A7]/10 to-[#1988A7]/20 py-12 px-4 sm:px-6 lg:px-8">
                     <Card className="max-w-md w-full p-8">
                         <div className="text-center mb-8">
-                            <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                            <div className="w-16 h-16 bg-[#1988A7] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                                 <span className="text-white font-bold text-2xl">TR</span>
                             </div>
                             <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -221,11 +221,11 @@ export default function ConnexionPage() {
     }
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-blue-100 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-[#1988A7]/10 to-[#1988A7]/20 py-12 px-4 sm:px-6 lg:px-8">
             <Card className="max-w-md w-full p-8">
                 {/* Logo et titre */}
                 <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-[#1988A7] rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                         <span className="text-white font-bold text-2xl">TR</span>
                     </div>
                     <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -301,14 +301,14 @@ export default function ConnexionPage() {
                             <label className="flex items-center">
                                 <input
                                     type="checkbox"
-                                    className="mr-2 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                                    className="mr-2 rounded border-gray-300 text-[#1988A7] focus:ring-[#1988A7]"
                                 />
                                 <span className="text-gray-700">Se souvenir de moi</span>
                             </label>
                             <button
                                 type="button"
                                 onClick={() => setShowForgotPassword(true)}
-                                className="text-blue-600 hover:text-blue-700 font-medium"
+                                className="text-[#1988A7] hover:text-[#146d8a] font-medium transition-all"
                             >
                                 Mot de passe oublié ?
                             </button>
@@ -336,7 +336,7 @@ export default function ConnexionPage() {
                             setIsLogin(!isLogin);
                             setError('');
                         }}
-                        className="text-blue-600 hover:text-blue-700 font-semibold"
+                        className="text-[#1988A7] hover:text-[#146d8a] font-semibold transition-all"
                     >
                         {isLogin ? "S'inscrire" : 'Se connecter'}
                     </button>

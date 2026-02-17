@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthProvider } from "@/context/AuthContext";
 
-const inter = Inter({
+const montserrat = Montserrat({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${inter.className} antialiased flex flex-col min-h-screen`}
+        className={`${montserrat.className} antialiased flex flex-col min-h-screen`}
         suppressHydrationWarning
       >
         <AuthProvider>

@@ -65,25 +65,25 @@ export default function CommercialHomePage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-[#1988A7] via-[#146d8a] to-[#0d5266] text-white overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-10"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center bg-blue-500 bg-opacity-30 rounded-full px-4 py-2 mb-6">
+          <div className="text-center max-w-4xl mx-auto animate-fade-in">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 mb-6 shadow-lg">
               <Zap className="w-4 h-4 mr-2" />
               <span className="text-sm font-medium">L'IA au service de vos RH</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
               Révolutionnez votre gestion des ressources humaines
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-white/90 font-light">
               TWEE RECRU combine intelligence artificielle et expertise RH pour vous offrir une plateforme complète, intuitive et performante
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl">
+              <button className="bg-white text-[#1988A7] px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl hover:scale-105">
                 Essayer gratuitement
               </button>
-              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+              <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#1988A7] transition-all hover:scale-105">
                 Voir une démo
               </button>
             </div>
@@ -104,63 +104,63 @@ export default function CommercialHomePage() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                <TrendingUp className="w-7 h-7 text-blue-600" />
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="bg-[#1988A7]/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                <TrendingUp className="w-7 h-7 text-[#1988A7]" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Gain de temps de 70%</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-[#272727] mb-3">Gain de temps de 70%</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Automatisez vos processus RH répétitifs et concentrez-vous sur ce qui compte vraiment : vos collaborateurs
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-green-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                <Brain className="w-7 h-7 text-green-600" />
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="bg-[#B91633]/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                <Brain className="w-7 h-7 text-[#B91633]" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">IA de pointe</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-[#272727] mb-3">IA de pointe</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Notre intelligence artificielle analyse les CV, prédit les compétences et optimise vos recrutements avec une précision inégalée
               </p>
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-purple-100 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="w-7 h-7 text-purple-600" />
+            <div className="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1">
+              <div className="bg-[#272727]/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
+                <Shield className="w-7 h-7 text-[#272727]" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Conformité RGPD</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-bold text-[#272727] mb-3">Conformité RGPD</h3>
+              <p className="text-gray-600 leading-relaxed">
                 Vos données et celles de vos employés sont sécurisées et conformes aux réglementations européennes
               </p>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-r from-[#1988A7] to-[#146d8a] rounded-2xl p-8 md:p-12 text-white shadow-xl">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-3xl font-bold mb-4">La confiance de +500 entreprises</h3>
-                <p className="text-blue-100 mb-6">
+                <p className="text-white/90 mb-6 font-light">
                   Des startups aux grandes entreprises, ils ont choisi TWEE RECRU pour transformer leur gestion RH
                 </p>
                 <div className="flex gap-8">
                   <div>
                     <div className="text-4xl font-bold">98%</div>
-                    <div className="text-blue-200">Satisfaction client</div>
+                    <div className="text-white/80">Satisfaction client</div>
                   </div>
                   <div>
                     <div className="text-4xl font-bold">2M+</div>
-                    <div className="text-blue-200">CV analysés</div>
+                    <div className="text-white/80">CV analysés</div>
                   </div>
                 </div>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white bg-opacity-10 rounded-lg p-4 backdrop-blur">
+                <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm hover:bg-white/20 transition-all">
                   <Award className="w-8 h-8 mb-2" />
-                  <div className="font-semibold text-blue-900">Prix Innovation RH 2024</div>
+                  <div className="font-semibold">Prix Innovation RH 2024</div>
                 </div>
-                <div className="bg-white bg-opacity-10 rounded-lg p-4 backdrop-blur">
+                <div className="bg-white/10 rounded-lg p-4 backdrop-blur-sm hover:bg-white/20 transition-all">
                   <Globe className="w-8 h-8 mb-2" />
-                  <div className="font-semibold text-blue-900">Disponible dans 12 pays</div>
+                  <div className="font-semibold">Disponible dans 12 pays</div>
                 </div>
               </div>
             </div>
@@ -188,12 +188,12 @@ export default function CommercialHomePage() {
               { icon: BookOpen, title: 'Formation continue', desc: 'Catalogues de formations, suivi de progression et certifications' },
               { icon: FileText, title: 'Gestion documentaire', desc: 'Stockage sécurisé et signatures électroniques' },
               { icon: BarChart3, title: 'Analytics avancés', desc: 'KPI en temps réel et rapports personnalisables' },
-              
+
             ].map((feature, idx) => (
-              <div key={idx} className="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow">
-                <feature.icon className="w-10 h-10 text-blue-600 mb-4" />
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.desc}</p>
+              <div key={idx} className="bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all hover:-translate-y-1 border border-gray-100">
+                <feature.icon className="w-10 h-10 text-[#1988A7] mb-4" />
+                <h3 className="text-lg font-bold text-[#272727] mb-2">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.desc}</p>
               </div>
             ))}
           </div>
@@ -210,25 +210,23 @@ export default function CommercialHomePage() {
             <p className="text-xl text-gray-600 mb-8">
               Tarifs transparents, sans frais cachés. Changez de pack à tout moment
             </p>
-            
+
             <div className="inline-flex bg-white rounded-lg p-1 shadow-sm">
               <button
                 onClick={() => setBillingCycle('monthly')}
-                className={`px-6 py-2 rounded-md font-medium transition-colors ${
-                  billingCycle === 'monthly'
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
+                className={`px-6 py-2 rounded-md font-medium transition-all ${billingCycle === 'monthly'
+                    ? 'bg-[#1988A7] text-white shadow-md'
+                    : 'text-gray-600 hover:text-[#1988A7]'
+                  }`}
               >
                 Mensuel
               </button>
               <button
                 onClick={() => setBillingCycle('yearly')}
-                className={`px-6 py-2 rounded-md font-medium transition-colors ${
-                  billingCycle === 'yearly'
-                    ? 'bg-blue-600 text-white'
-                    : 'text-gray-600 hover:text-gray-900'
-                }`}
+                className={`px-6 py-2 rounded-md font-medium transition-all ${billingCycle === 'yearly'
+                    ? 'bg-[#1988A7] text-white shadow-md'
+                    : 'text-gray-600 hover:text-[#1988A7]'
+                  }`}
               >
                 Annuel
                 <span className="ml-2 text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">
@@ -242,19 +240,18 @@ export default function CommercialHomePage() {
             {packs.map((pack, idx) => (
               <div
                 key={idx}
-                className={`bg-white rounded-2xl shadow-lg overflow-hidden ${
-                  pack.recommended ? 'ring-2 ring-blue-600 transform scale-105' : ''
-                }`}
+                className={`bg-white rounded-2xl shadow-lg overflow-hidden transition-all hover:shadow-2xl ${pack.recommended ? 'ring-2 ring-[#1988A7] transform scale-105' : 'hover:scale-102'
+                  }`}
               >
                 {pack.recommended && (
-                  <div className="bg-blue-600 text-white text-center py-2 text-sm font-semibold">
+                  <div className="bg-[#1988A7] text-white text-center py-2 text-sm font-semibold">
                     ⭐ Plus populaire
                   </div>
                 )}
                 <div className="p-8">
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{pack.name}</h3>
                   <p className="text-gray-600 mb-6">{pack.description}</p>
-                  
+
                   <div className="mb-6">
                     <span className="text-5xl font-bold text-gray-900">
                       {billingCycle === 'monthly' ? pack.monthlyPrice : pack.yearlyPrice}€
@@ -264,11 +261,10 @@ export default function CommercialHomePage() {
                     </span>
                   </div>
 
-                  <button className={`w-full py-3 rounded-lg font-semibold transition-colors ${
-                    pack.recommended
-                      ? 'bg-blue-600 text-white hover:bg-blue-700'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
-                  }`}>
+                  <button className={`w-full py-3 rounded-lg font-semibold transition-all ${pack.recommended
+                      ? 'bg-[#1988A7] text-white hover:bg-[#146d8a] shadow-md hover:shadow-lg'
+                      : 'bg-gray-100 text-[#272727] hover:bg-gray-200'
+                    }`}>
                     Commencer
                   </button>
 
@@ -295,7 +291,7 @@ export default function CommercialHomePage() {
             <p className="text-gray-600 mb-4">
               Besoin d'une solution sur mesure ? Notre équipe est là pour vous accompagner
             </p>
-            <button className="text-blue-600 font-semibold hover:text-blue-700">
+            <button className="text-[#1988A7] font-semibold hover:text-[#146d8a] transition-all hover:underline">
               Contacter notre équipe commerciale →
             </button>
           </div>
@@ -303,23 +299,23 @@ export default function CommercialHomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+      <section className="py-20 bg-gradient-to-r from-[#1988A7] to-[#146d8a] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">
             Prêt à transformer votre gestion RH ?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-white/90 mb-8 font-light">
             Rejoignez les centaines d'entreprises qui ont déjà fait confiance à TWEE RECRU
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-all shadow-lg">
+            <button className="bg-white text-[#1988A7] px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all shadow-lg hover:shadow-xl hover:scale-105">
               Essai gratuit 14 jours
             </button>
-            <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-all">
+            <button className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#1988A7] transition-all hover:scale-105">
               Planifier une démo
             </button>
           </div>
-          <p className="mt-6 text-blue-200 text-sm">
+          <p className="mt-6 text-white/80 text-sm">
             Aucune carte bancaire requise • Annulation à tout moment • Support en français
           </p>
         </div>
